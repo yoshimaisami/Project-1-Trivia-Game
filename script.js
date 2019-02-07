@@ -1,21 +1,16 @@
 const challenges = [
   {
-    // question:
-    // "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg", //insertImage1dog,
+    question:
+      "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg",
     option: ["Dog", "Cat"],
     correctAnswer: "Dog"
-    // correctAnswerIndex: 0
   },
 
   {
     question:
-      "https://image.freepik.com/free-vector/beautiful-frog-emoticons-set_23-2147592374.jpg", //insertImagefrog,
+      "https://image.freepik.com/free-vector/beautiful-frog-emoticons-set_23-2147592374.jpg",
     options: ["Frog", "Bird"],
     correctAnswer: "Frog"
-  },
-
-  {
-    src: "http://place-sloth.com/500-500.png"
   },
 
   {
@@ -26,11 +21,15 @@ const challenges = [
   }
 ];
 
-document.getElementsByClassName("questionImage").innerHTML = "<p>Hello</p>";
+var imageSwapper = document.querySelector(".questionImage");
+imageSwapper.src =
+  "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg";
 
-// console.log("Hello");
+// var quesImg = document.querySelector(".questionImage");
+// quesImg.src =
+//   "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg";
 
-// document.getElementsByClassName("question").innerHTML = "<p>Hello</p>";
+// console.log(quesImg);
 
 // // optionName.innerText = "Hello";
 // console.log(optionName.innerHTML);
