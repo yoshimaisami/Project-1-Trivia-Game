@@ -9,14 +9,14 @@ const challenges = [
   {
     question:
       "https://image.freepik.com/free-vector/beautiful-frog-emoticons-set_23-2147592374.jpg",
-    options: ["Frog", "Bird"],
+    option: ["Frog", "Bird"],
     correctAnswer: "Frog"
   },
 
   {
     question:
       "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg", //insertImage3bunny,
-    options: ["Bunny", "Horse"],
+    option: ["Bunny", "Horse"],
     correctAnswer: "Bunny"
   }
 ];
@@ -25,11 +25,23 @@ var imageSwapper = document.querySelector(".questionImage");
 imageSwapper.src =
   "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg";
 
-var option1Swapper = document.querySelector(".correctAnswer");
-option1Swapper.innerHTML = "Dog";
+var option1Swapper = document.querySelector(".optionOne");
+// option1Swapper.innerHTML = "Bunny";
 
-var option2Swapper = document.querySelector(".incorrectAnswer");
-option2Swapper.innerHTML = "Cat";
+var option2Swapper = document.querySelector(".optionTwo");
+// option2Swapper.innerHTML = "Cat";
+
+// console.log(option1Swapper);
+option1Swapper.addEventListener("click", function() {
+  option1Swapper.innerHTML = challenges[2].option[0];
+});
+
+option2Swapper.addEventListener("click", function() {
+  option2Swapper.innerHTML = challenges[2].option[1];
+});
+
+// document.getElementById("myBtn").addEventListener("click", function () {
+//   alert("Hello World!");
 
 // var imageSwapper = (document.querySelector(".questionImage").src =
 //   "https://image.freepik.com/free-vector/beautiful-frog-emoticons-set_23-2147592374.jpg");
@@ -48,11 +60,6 @@ option2Swapper.innerHTML = "Cat";
 // picture.innerHTML = "Hello";
 
 // console.log(picture);
-
-// .src =
-//   "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg");
-
-// picture.innerHTML = "hi";
 
 //var imageReplacement = (document.getElementsByTagName("img");
 
