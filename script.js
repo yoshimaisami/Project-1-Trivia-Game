@@ -15,20 +15,29 @@ const challenges = [
 
   {
     question:
-      "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg", //insertImage3bunny,
+      "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg",
     option: ["Bunny", "Horse"],
     correctAnswer: "Bunny"
   }
 ];
 
-var imageSwapper = document.querySelector(".questionImage");
-imageSwapper.src =
-  "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg";
+//need initial game state, with initial image/question and options (1 & 2)
+function initialGameState() {
+  imageSwapper.src = challenges[0].question;
+  option1Swapper.innerHTML = challenges[0].option[0];
+  option2Swapper.innerHTML = challenges[0].option[1];
+}
 
-var option1Swapper = document.querySelector(".optionOne");
+//need a way to swap images(questions) that are displayed
+let imageSwapper = document.querySelector(".questionImage");
+imageSwapper.src = challenges[0].question;
+
+//need a way to swap out options (potential answers)
+let option1Swapper = document.querySelector(".optionOne");
 // option1Swapper.innerHTML = "Bunny";
 
-var option2Swapper = document.querySelector(".optionTwo");
+//need a way to swap out options (potential answers)
+let option2Swapper = document.querySelector(".optionTwo");
 // option2Swapper.innerHTML = "Cat";
 
 // console.log(option1Swapper);
@@ -39,6 +48,8 @@ option1Swapper.addEventListener("click", function() {
 option2Swapper.addEventListener("click", function() {
   option2Swapper.innerHTML = challenges[2].option[1];
 });
+
+initialGameState();
 
 // document.getElementById("myBtn").addEventListener("click", function () {
 //   alert("Hello World!");
