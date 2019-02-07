@@ -16,37 +16,60 @@ const challenges = [
   {
     question:
       "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg",
-    option: ["Bunny", "Horse"],
+    option: ["Horse", "Bunny"],
     correctAnswer: "Bunny"
   }
 ];
+let imageSwapper = document.querySelector(".questionImage");
+let option1Swapper = document.querySelector(".optionOne");
+let option2Swapper = document.querySelector(".optionTwo");
+var answer = "";
 
 //need initial game state, with initial image/question and options (1 & 2)
-function initialGameState() {
-  imageSwapper.src = challenges[0].question;
-  option1Swapper.innerHTML = challenges[0].option[0];
-  option2Swapper.innerHTML = challenges[0].option[1];
-}
-
 //need a way to swap images(questions) that are displayed
-let imageSwapper = document.querySelector(".questionImage");
-imageSwapper.src = challenges[0].question;
+// imageSwapper.src = challenges[0].question;
 
 //need a way to swap out options (potential answers)
-let option1Swapper = document.querySelector(".optionOne");
 // option1Swapper.innerHTML = "Bunny";
 
 //need a way to swap out options (potential answers)
-let option2Swapper = document.querySelector(".optionTwo");
 // option2Swapper.innerHTML = "Cat";
 
-// console.log(option1Swapper);
+//event listeners
+initialGamestate(0);
+
+function initialGameState(gameLevel) {
+  imageSwapper.src = challenges[gameLevel].question;
+  option1Swapper.innerHTML = challenges[gameLevel].option[0];
+  option2Swapper.innerHTML = challenges[gameLevel].option[1];
+}
+
 option1Swapper.addEventListener("click", function() {
-  option1Swapper.innerHTML = challenges[2].option[0];
+  // option1Swapper.innerHTML = challenges[2].option[0];
+  answer = option1Swapper.innerHTML;
+  console.log(challenges[0].correctAnswer === answer);
+  initialGameState(1);
 });
 
 option2Swapper.addEventListener("click", function() {
-  option2Swapper.innerHTML = challenges[2].option[1];
+  // option2Swapper.innerHTML = challenges[2].option[1];
+  answer = option2Swapper.innerHTML;
+  console.log(challenges[0].correctAnswer === answer);
+  initialGameState(1);
+});
+
+option1Swapper.addEventListener("click", function() {
+  // option1Swapper.innerHTML = challenges[2].option[0];
+  answer = option1Swapper.innerHTML;
+  console.log(challenges[1].correctAnswer === answer);
+  initialGameState(2);
+});
+
+option2Swapper.addEventListener("click", function() {
+  // option2Swapper.innerHTML = challenges[2].option[1];
+  answer = option2Swapper.innerHTML;
+  console.log(challenges[1].correctAnswer === answer);
+  initialGameState(2);
 });
 
 initialGameState();
