@@ -12,35 +12,45 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <header class="headerbox">
       <h1 class="gamename">Reading Game</h1>
       <h2 class="scoreboard">Score: TBD</h2>
       <p class="instructions">
-        Instructions: Look at the picture below and then select the word that
-        best matches from the options that are presented to you. Good luck!
+        Instructions: Look at the picture below and select the word that best
+        matches from the options that are presented to you. Good luck!
       </p>
     </header>
     <main>
       <div class="question">
-        <img
-          class="questionImage"
-          src="http://place-sloth.com/500-500.png"
-          alt="file name of questionImage"
-        />
+        <!-- src="http://place-sloth.com/500-500.png" -->
+        <!-- class="questionImage" alt="file name of questionImage" / -->
+        <img />
       </div>
     </main>
-    <section>
-      <a href="#" class="correctAnswer">Option 1</a>
-      <a href="#" class="incorrectAnswer">Option 2</a>
-    </section>
-    <section>
-      <a href="#" class="nextQuestion">Next Question</a>
-      <a href="#" class="reset">Reset</a>
-    </section>
+
+    <div class="grid">
+      <div class="option1">
+        <a href="#" class="correctAnswer">Option 1</a>
+      </div>
+
+      <div class="option2">
+        <a href="#" class="incorrectAnswer">Option 2</a>
+      </div>
+
+      <div class="nextTransition">
+        <a href="#" class="nextButton">Next Question</a>
+      </div>
+
+      <div class="resetButton">
+        <a href="#" class="reset">Reset</a>
+      </div>
+    </div>
+
     <footer>
       <a href="#" class="linkedin">Linkedin</a>
       <a href="#" class="twitter">Twitter</a>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

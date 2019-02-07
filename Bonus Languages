@@ -1,0 +1,20 @@
+Could try diff langauges.
+
+   challenge: 0,
+    question:
+      "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg", //insertImage1dog,
+    option: ["Dog", "Cat"],
+    // option: [{
+    //     en: 'Dog',
+    //     sp: 'Perro'
+    //     tr: 'Kopek'
+    // },
+    // {
+    //     en:'Cat',
+    //     sp: 'Gato'
+    //     tr: 'Kidi'
+    // }
+    // ],
+    correctAnswer: "Dog"
+    // correctAnswerIndex: 0
+  },
