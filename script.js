@@ -25,6 +25,15 @@ var imageSwapper = document.querySelector(".questionImage");
 imageSwapper.src =
   "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg";
 
+var option1Swapper = document.querySelector(".correctAnswer");
+option1Swapper.innerHTML = "Dog";
+
+var option2Swapper = document.querySelector(".incorrectAnswer");
+option2Swapper.innerHTML = "Cat";
+
+// var imageSwapper = (document.querySelector(".questionImage").src =
+//   "https://image.freepik.com/free-vector/beautiful-frog-emoticons-set_23-2147592374.jpg");
+
 // var quesImg = document.querySelector(".questionImage");
 // quesImg.src =
 //   "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg";
