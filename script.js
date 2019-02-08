@@ -37,6 +37,45 @@ let option1Swapper = document.querySelector(".optionOne");
 let option2Swapper = document.querySelector(".optionTwo");
 var answer = "";
 
+gameLevel = 0;
+
+function initialGameState() {
+  imageSwapper.src = challenges[gameLevel].question;
+  option1Swapper.innerHTML = challenges[gameLevel].option[0];
+  option2Swapper.innerHTML = challenges[gameLevel].option[1];
+}
+
+option1Swapper.addEventListener("click", nextLevel);
+option2Swapper.addEventListener("click", stayPut);
+
+function stayPut() {
+  answer = option2Swapper.innerHTML;
+  console.log(answer);
+  if (answer === challenges[gameLevel].incorrectAnswer) {
+    alert("Oopsie, please try again");
+    initialGameState();
+  }
+}
+
+function nextLevel() {
+  answer = option1Swapper.innerHTML;
+  console.log(answer);
+  if (answer === challenges[gameLevel].correctAnswer) {
+    alert("Good job, please try another question");
+    gameLevel++;
+    initialGameState();
+  }
+}
+
+initialGameState();
+
+// Notes:
+// need to display "question" image in question div
+// display corresponding options beneath the question image
+// user should be able to "click" on options
+// system will check for correctAnswer
+// if correct, show congrats msg (bonus: play matching animal sound "woof-woof")
+// if wrong, show try again msg (bonus: play whoopsi)
 //need initial game state, with initial image/question and options (1 & 2)
 //need a way to swap images(questions) that are displayed
 // imageSwapper.src = challenges[0].question;
@@ -53,54 +92,6 @@ var answer = "";
 //function check if the answer's correct
 //IF it's right, iterate
 //create function that pulls next question
-
-gameLevel = 0;
-
-function initialGameState() {
-  imageSwapper.src = challenges[gameLevel].question;
-  option1Swapper.innerHTML = challenges[gameLevel].option[0];
-  option2Swapper.innerHTML = challenges[gameLevel].option[1];
-}
-
-option1Swapper.addEventListener("click", nextLevel);
-option2Swapper.addEventListener("click", stayput);
-
-function stayput() {
-  answer = option2Swapper.innerHTML;
-  console.log(answer);
-  if (answer === challenges[gameLevel].incorrectAnswer) {
-    alert("oopsie");
-    initialGameState();
-  }
-}
-
-function nextLevel() {
-  answer = option1Swapper.innerHTML;
-  console.log(answer);
-  if (answer === challenges[gameLevel].correctAnswer) {
-    alert("congrats");
-    gameLevel++;
-    initialGameState();
-  }
-}
-
-// function nextLevel() {
-//   answer = option2Swapper.innerHTML;
-//   console.log(answer);
-//   if (answer !== challenges[gameLevel].correctAnswer) {
-//     alert("sorry");
-//   }
-// }
-
-initialGameState();
-
-// Notes:
-// need to display "question" image in question div
-// display corresponding options beneath the question image
-// user should be able to "click" on options
-// system will check for correctAnswer
-// if correct, show congrats msg (bonus: play matching animal sound "woof-woof")
-// if wrong, show try again msg (bonus: play whoopsi)
 
 // Questions:
 // should I split the options array up, and have two seperate keys...correctAnswer & incorrectAnswer...might make it easier for validation.
@@ -137,3 +128,11 @@ initialGameState();
 //var setImage = (imageReplacement = challenges[0].question);
 //challenges[0].option[0]; //dog
 //challenges[0].option[1]; //cat
+
+// function nextLevel() {
+//   answer = option2Swapper.innerHTML;
+//   console.log(answer);
+//   if (answer !== challenges[gameLevel].correctAnswer) {
+//     alert("sorry");
+//   }
+// }
