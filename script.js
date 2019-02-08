@@ -3,28 +3,32 @@ const challenges = [
     question:
       "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg",
     option: ["dog", "cat"],
-    correctAnswer: "dog"
+    correctAnswer: "dog",
+    incorrectAnswer: "cat"
   },
 
   {
     question:
       "https://image.freepik.com/free-vector/beautiful-frog-emoticons-set_23-2147592374.jpg",
     option: ["frog", "bird"],
-    correctAnswer: "frog"
+    correctAnswer: "frog",
+    incorrectAnswer: "bird"
   },
 
   {
     question:
       "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg",
     option: ["bunny", "horse"],
-    correctAnswer: "bunny"
+    correctAnswer: "bunny",
+    incorrectAnswer: "horse"
   },
 
   {
     question:
       "https://image.freepik.com/free-vector/funny-monkey-cartoons_1042-160.jpg",
     option: ["monkey", "mouse"],
-    correctAnswer: "monkey"
+    correctAnswer: "monkey",
+    incorrectAnswer: "mouse"
   }
 ];
 
@@ -59,17 +63,34 @@ function initialGameState() {
 }
 
 option1Swapper.addEventListener("click", nextLevel);
-option2Swapper.addEventListener("click", nextLevel);
+option2Swapper.addEventListener("click", stayput);
+
+function stayput() {
+  answer = option2Swapper.innerHTML;
+  console.log(answer);
+  if (answer === challenges[gameLevel].incorrectAnswer) {
+    alert("oopsie");
+    initialGameState();
+  }
+}
 
 function nextLevel() {
   answer = option1Swapper.innerHTML;
   console.log(answer);
   if (answer === challenges[gameLevel].correctAnswer) {
-    // alert("congrats");
+    alert("congrats");
     gameLevel++;
     initialGameState();
   }
 }
+
+// function nextLevel() {
+//   answer = option2Swapper.innerHTML;
+//   console.log(answer);
+//   if (answer !== challenges[gameLevel].correctAnswer) {
+//     alert("sorry");
+//   }
+// }
 
 initialGameState();
 
