@@ -32,6 +32,15 @@
 If you are having issues, please let us know.
 We have a mailing list located at: yoshi@govtree.com
 
+## Future Features
+
+---
+
+- choose your theme [animals, food, colors, transportaion vehicles, etc]
+- choose your language [english, french, spanish, german, etc]
+- add sound to alerts... pontentially even unique to each image (example: you'd here "woof-woof!" + "Congtats!" if you got the dog challenge correct).
+- enable Users/Parents to add their own questions/images and options
+
 ## Notes
 
 ---

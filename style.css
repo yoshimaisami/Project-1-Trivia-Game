@@ -59,9 +59,9 @@ main {
 .optionOne {
   text-decoration: none;
   font-size: 6rem;
-  color: inherit;
-  border: 1px solid blue;
-  border-radius: 5px;
+  color: grey;
+  border: 3px solid lightgrey;
+  border-radius: 7px;
   width: 50%;
   height: 75%;
   margin: 0 auto;
@@ -72,9 +72,9 @@ main {
 .optionTwo {
   text-decoration: none;
   font-size: 6rem;
-  color: inherit;
-  border: 1px solid blue;
-  border-radius: 5px;
+  color: grey;
+  border: 3px solid lightgray;
+  border-radius: 7px;
   width: 50%;
   height: 75%;
   margin: 0 auto;
