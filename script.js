@@ -73,6 +73,18 @@ function nextLevel() {
 
 initialGameState();
 
+// Notes:
+// need to display "question" image in question div
+// display corresponding options beneath the question image
+// user should be able to "click" on options
+// system will check for correctAnswer
+// if correct, show congrats msg (bonus: play matching animal sound "woof-woof")
+// if wrong, show try again msg (bonus: play whoopsi)
+
+// Questions:
+// should I split the options array up, and have two seperate keys...correctAnswer & incorrectAnswer...might make it easier for validation.
+
+//Misc:
 // document.getElementById("myBtn").addEventListener("click", function () {
 //   alert("Hello World!");
 
@@ -104,14 +116,3 @@ initialGameState();
 //var setImage = (imageReplacement = challenges[0].question);
 //challenges[0].option[0]; //dog
 //challenges[0].option[1]; //cat
-
-// Notes:
-// need to display "question" image in question div
-// display corresponding options beneath the question image
-// user should be able to "click" on options
-// system will check for correctAnswer
-// if correct, show congrats msg (bonus: play matching animal sound "woof-woof")
-// if wrong, show try again msg (bonus: play whoopsi)
-
-// Questions:
-// should I split the options array up, and have two seperate keys...correctAnswer & incorrectAnswer...might make it easier for validation.
