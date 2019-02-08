@@ -58,6 +58,7 @@ main {
 
 .optionOne {
   text-decoration: none;
+  font-size: 6rem;
   color: inherit;
   border: 1px solid blue;
   border-radius: 5px;
@@ -70,6 +71,7 @@ main {
 
 .optionTwo {
   text-decoration: none;
+  font-size: 6rem;
   color: inherit;
   border: 1px solid blue;
   border-radius: 5px;

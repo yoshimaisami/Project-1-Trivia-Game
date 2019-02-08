@@ -2,24 +2,32 @@ const challenges = [
   {
     question:
       "https://image.freepik.com/free-vector/cute-dog-breeds_23-2147519661.jpg",
-    option: ["Dog", "Cat"],
-    correctAnswer: "Dog"
+    option: ["dog", "cat"],
+    correctAnswer: "dog"
   },
 
   {
     question:
       "https://image.freepik.com/free-vector/beautiful-frog-emoticons-set_23-2147592374.jpg",
-    option: ["Frog", "Bird"],
-    correctAnswer: "Frog"
+    option: ["frog", "bird"],
+    correctAnswer: "frog"
   },
 
   {
     question:
       "https://image.freepik.com/free-vector/flat-easter-bunny-collection_23-2147752672.jpg",
-    option: ["Horse", "Bunny"],
-    correctAnswer: "Bunny"
+    option: ["bunny", "horse"],
+    correctAnswer: "bunny"
+  },
+
+  {
+    question:
+      "https://image.freepik.com/free-vector/funny-monkey-cartoons_1042-160.jpg",
+    option: ["monkey", "mouse"],
+    correctAnswer: "monkey"
   }
 ];
+
 let imageSwapper = document.querySelector(".questionImage");
 let option1Swapper = document.querySelector(".optionOne");
 let option2Swapper = document.querySelector(".optionTwo");
@@ -36,41 +44,32 @@ var answer = "";
 // option2Swapper.innerHTML = "Cat";
 
 //event listeners
-initialGamestate(0);
+//initialGamestate(0);
 
-function initialGameState(gameLevel) {
+//function check if the answer's correct
+//IF it's right, iterate
+//create function that pulls next question
+
+gameLevel = 0;
+
+function initialGameState() {
   imageSwapper.src = challenges[gameLevel].question;
   option1Swapper.innerHTML = challenges[gameLevel].option[0];
   option2Swapper.innerHTML = challenges[gameLevel].option[1];
 }
 
-option1Swapper.addEventListener("click", function() {
-  // option1Swapper.innerHTML = challenges[2].option[0];
+option1Swapper.addEventListener("click", nextLevel);
+option2Swapper.addEventListener("click", nextLevel);
+
+function nextLevel() {
   answer = option1Swapper.innerHTML;
-  console.log(challenges[0].correctAnswer === answer);
-  initialGameState(1);
-});
-
-option2Swapper.addEventListener("click", function() {
-  // option2Swapper.innerHTML = challenges[2].option[1];
-  answer = option2Swapper.innerHTML;
-  console.log(challenges[0].correctAnswer === answer);
-  initialGameState(1);
-});
-
-option1Swapper.addEventListener("click", function() {
-  // option1Swapper.innerHTML = challenges[2].option[0];
-  answer = option1Swapper.innerHTML;
-  console.log(challenges[1].correctAnswer === answer);
-  initialGameState(2);
-});
-
-option2Swapper.addEventListener("click", function() {
-  // option2Swapper.innerHTML = challenges[2].option[1];
-  answer = option2Swapper.innerHTML;
-  console.log(challenges[1].correctAnswer === answer);
-  initialGameState(2);
-});
+  console.log(answer);
+  if (answer === challenges[gameLevel].correctAnswer) {
+    // alert("congrats");
+    gameLevel++;
+    initialGameState();
+  }
+}
 
 initialGameState();
 
